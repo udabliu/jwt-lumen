@@ -27,7 +27,7 @@ class UsuarioController extends Controller
   {
     $this->validate($request, [
       'email' => 'required|email|max:255',
-      'login' => 'required'
+      'password' => 'required'
     ]);
 
     if (! $token = $this->jwt->attempt($request->only('email', 'password'))) 
